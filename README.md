@@ -41,24 +41,10 @@ Once your system is prepared, follow these steps to run the script:
 
        # Download the power plan file to C:\
        Invoke-RestMethod -Uri $url -OutFile $destination
-
-       # Import the power plan
-       powercfg -import $destination
-
-       # Optional: Activate the imported power plan
-       $guid = (powercfg -list | Select-String -Pattern "GUID:.*" -Context 0,1 | Select-String -Pattern "(?<=GUID: )[^ ]+").Matches.Value
-       if ($guid) {
-           powercfg -setactive $guid
-           Write-Output "Custom power plan has been imported and activated."
-       } else {
-           Write-Output "Custom power plan imported, but not activated."
-       }
-   }
    
    irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
 
-This PowerShell script automatically downloads and imports a custom power plan (shakabo.pow) from the shooki-opt repository, saving it to C:\ and optionally activating it. It also runs the main shooki-opt script via iex irm, providing access to the optimization toolkit.
-
+This PowerShell script automatically downloads a custom power plan (shakabo.pow) from the shooki-opt repository, saving it to <C:\>. It also runs the main shooki-opt script via iex irm, providing access to the optimization toolkit.
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
@@ -73,7 +59,6 @@ After running the script, you may want to return the PowerShell execution policy
 2. Run the following command:
    ```powershell
    Set-ExecutionPolicy Restricted
-..
 
 <h1>3. Manual Installation </a></h1>
 

@@ -32,9 +32,7 @@ Before running the PowerShell script, make sure you allow PowerShell scripts to 
 Once your system is prepared, follow these steps to run the script:
 
 1. **Open PowerShell as Administrator** (if not already opened).
-2. **use the commands below**:
-   - Use the `cd` command in PowerShell to go to the directory containing `shooki-opt.ps1`. For example:
-# Background job to download and import the power plan
+2. **Prompt the commands below**:
 ```
 Start-Job -ScriptBlock {
     $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"

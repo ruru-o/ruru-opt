@@ -111,24 +111,29 @@ This document explains the system tweaks applied by the PowerShell optimization 
 | **Optimize Kernel Performance**    | Improves process scheduling and computational tasks via kernel-level adjustments.                                                                                                               | Modifies kernel registry settings for efficient resource allocation.                                                                                                    |
                                                                             
 
-## Power Plan Details
+# Catnip Lowest Latency Power Plan
 
-### Catnip Lowest Latency Power Plan
-This power plan is optimized for low-latency tasks such as gaming or real-time applications. The **Catnip Power Plan** disables all energy-saving features, including hibernation, to ensure the system maintains high performance at all times. By eliminating unnecessary power-saving mechanisms, such as CPU throttling and drive sleep, this plan ensures that the system stays responsive under demanding conditions.
+The **Catnip Lowest Latency Power Plan** is designed for tasks requiring low latency, such as gaming or real-time applications. It disables energy-saving features to prioritize performance.
 
-- **Hibernation Disabled**: The hibernation mode, which normally saves the system's state to the disk to conserve power, is disabled. This removes the hiberfil.sys file, freeing up disk space and ensuring a quicker shutdown and restart process.
-- **CPU Performance Prioritization**: The CPU is set to always perform at its highest available frequency, reducing latency in tasks that require quick processing.
-- **No Power Savings**: All energy-saving features that reduce CPU speed or turn off non-essential components are disabled to maximize performance.
-  
-Running this plan may increase power consumption, so it is ideal for desktop systems that prioritize performance over battery life.
+## Necessary tweaks
 
----
+- **Hibernation Disabled**
+  - Hibernation mode is turned off, removing the `hiberfil.sys` file. This frees disk space and allows faster shutdowns and restarts.
 
-## Notes
-- **Always backup your system** before making significant changes like those outlined here, especially if you are unfamiliar with registry editing.
-- The tweaks listed above involve modifying system configurations, which may lead to unexpected behaviors if improperly applied. **Only advanced users or those familiar with system optimization should proceed**.
-- **Security Warning**: Disabling Windows Defender or any other security-related service may expose your system to potential threats. Always ensure alternative security software is in place if you choose to disable such services.
-- **System Responsiveness**: Some of these optimizations, particularly those related to disabling services, may impact how certain background functions operate. This is expected behavior but can lead to system behavior changes that users should be aware of.
+- **CPU Performance Prioritization**
+  - The CPU operates at its highest frequency, preventing delays caused by frequency scaling.
+
+- **No Power Savings**
+  - All energy-saving features are disabled, keeping components active and ready.
+
+> [!CAUTION]  
+> This power plan is best suited for desktop systems where power usage is not a concern.
+
+> [!CAUTION]  
+> Ensure proper cooling as components may generate more heat due to continuous high performance.
+
+## Creator
+- Power plan by [Catnip](https://x.com/catnippin)
 
 
 <h1>4. References </a></h1>

@@ -79,7 +79,7 @@ Since the script makes changes to your system’s settings, it requires administ
 Once the script is executed successfully, it will automatically apply the **Catnip Lowest Latency Power Plan** (`.pow` file) to ensure optimal system performance for low-latency tasks.
 
 > [!CAUTION]  
-> The **Catnip Lowest Latency Power Plan** optimizes the system for low-latency tasks. While this can improve performance for certain applications (such as gaming or real-time processing), it may reduce battery life on laptops and increase power consumption. Use this plan if performance is a priority.
+> The **Catnip Lowest Latency Power Plan** disables power-saving features to prioritize performance, reducing latency for tasks like gaming or real-time processing. This may increase power consumption and reduce battery life on laptops. Use it when performance matters most.
 
 ### **Step 7: Reset Execution Policy (Optional)**
 

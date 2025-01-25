@@ -1,12 +1,12 @@
 # shooki-opt
 
-<h1 id="introduction">1. Introduction </a></h1>
+<h1>1. Introduction </a></h1>
 This PowerShell script implements several system optimizations for Windows, focusing on power plan configurations, CPU scheduling, and registry adjustments to improve system performance and minimize input lag. It customizes active power plans to prioritize performance, optimizes CPU scheduling for better resource distribution, and tweaks registry settings to improve system responsiveness, including changes to I/O scheduling and background processes. 
 
 > [!NOTE]
 > While the script is designed to handle errors, unexpected issues may still occur. A system backup is strongly recommended before running the script, and users should ensure their system meets the necessary prerequisites for the adjustments to work correctly. 
 
-## 2. Getting Started
+<h1>2. Getting Started </a></h1>
 
 ### **Step 1: Prepare Your System**
 
@@ -84,7 +84,7 @@ After running the script, you may want to return the PowerShell execution policy
    Set-ExecutionPolicy Restricted
    ```
 
-# 3. Documentation
+<h1>3. Documentation </a></h1>
 
 This document explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
 
@@ -132,7 +132,7 @@ Running this plan may increase power consumption, so it is ideal for desktop sys
 - **System Responsiveness**: Some of these optimizations, particularly those related to disabling services, may impact how certain background functions operate. This is expected behavior but can lead to system behavior changes that users should be aware of.
 
 
-## 4. References
+<h1>4. References </a></h1>
 
 - [valleyofdoom/PC-Tuning](https://github.com/valleyofdoom/PC-Tuning) - A repository where many of the optimizations were learned from and adapted, providing a practical basis for optimizing system performance.
 - [Calypto's Latency Guide](https://calypto.us) - A comprehensive resource providing in-depth knowledge about responsive gameplay, input lag, and the essential tweaks needed for smoother, more responsive system performance.

@@ -85,7 +85,7 @@ After running the script, you may want to return the PowerShell execution policy
    ```
 
 
-## 3. Other Resources
+## 3. References
 
 - [valleyofdoom/PC-Tuning](https://github.com/valleyofdoom/PC-Tuning) - A repository where many of the optimizations were learned from and adapted, providing a practical basis for optimizing system performance.
 - [Calypto's Latency Guide](https://calypto.us) - A comprehensive resource providing in-depth knowledge about responsive gameplay, input lag, and the essential tweaks needed for smoother, more responsive system performance.

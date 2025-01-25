@@ -85,8 +85,6 @@ After running the script, you may want to return the PowerShell execution policy
    ```
 
 ## 3. Documentation
-# PowerShell System Optimization Script Documentation
-
 This document outlines the various system tweaks applied by the PowerShell optimization script, including registry adjustments, power plan configurations, and other system optimizations designed to enhance performance. These optimizations primarily focus on reducing latency and improving system responsiveness.
 
 | **Name**                           | **Description**                                                                                                                                                                                | **Action**                                                                                                                                                               |

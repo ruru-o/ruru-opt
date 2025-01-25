@@ -87,5 +87,5 @@ After running the script, you may want to return the PowerShell execution policy
 
 ## 3. Other Resources
 
-- [valleyofdoom/PC-Tuning]([https://github.com/BoringBoredom/PC-Optimization-Hub](https://github.com/valleyofdoom/PC-Tuning))
+- [valleyofdoom/PC-Tuning](https://github.com/valleyofdoom/PC-Tuning)
 - [Calypto's Latency Guide](https://calypto.us)

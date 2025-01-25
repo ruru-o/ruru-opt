@@ -1240,7 +1240,7 @@ $primaryColor = [System.Drawing.Color]::White  # Example: Set it to black, chang
 
 # Subtitle Label with CMD Font (Positioned directly under title with minimal space)
 $subtitleLabel = New-Object System.Windows.Forms.Label
-$subtitleLabel.Text = "Windows Optimization and System Tweaks"
+$subtitleLabel.Text = "meow... input lag"
 $subtitleLabel.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  # CMD font
 $subtitleLabel.ForeColor = $primaryColor  # Now $primaryColor is defined
 $subtitleLabel.TextAlign = [System.Drawing.ContentAlignment]::MiddleCenter
@@ -1519,7 +1519,7 @@ $asciiArtStart = @"
  |___/_| |_|\___/ \___/|_|\_\_|           \___/| .__/ \__|
                                                | |        
                                                |_|        
-  shooki win-optimizations
+  shooki windows meowkit
 "@
 Write-Host $asciiArtStart -ForegroundColor White
 

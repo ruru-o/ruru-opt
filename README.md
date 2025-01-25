@@ -106,7 +106,7 @@ After running the script, you may want to return the PowerShell execution policy
 | **Optimize Executive Worker Threads** | Enhances task handling by optimizing background worker thread management.                                                                                            | Updates registry to streamline thread processing.                                                                                                                       |
 | **Optimize Power Management Settings** | Applies configurations to balance performance and power consumption for battery efficiency.                                                                                                    | Tweaks power management registry settings.                                                                                                                              |
 | **Optimize Kernel Performance**    | Improves process scheduling and computational tasks via kernel-level adjustments.                                                                                                               | Modifies kernel registry settings for efficient resource allocation.                                                                                                    |
-                                                                            |
+                                                                            
 
 ## Power Plan Details
 

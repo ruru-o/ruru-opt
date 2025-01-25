@@ -9,16 +9,17 @@ This PowerShell script implements several system optimizations for Windows, focu
 ..
 
 <h1>2. Getting Started </a></h1>
-### ***Step 1: Prepare Your System***
+
+## Step 1: Prepare Your System
 
 Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system.
 
-### 1. **Open PowerShell as Administrator:**
+### 1. Open PowerShell as Administrator:
    - Click the **Start Menu** and search for **PowerShell**.
    - Right-click **Windows PowerShell** and select **Run as Administrator**.
    - Confirm with **Yes** if prompted.
 
-### 2. **Set Execution Policy to Unrestricted:**
+### 2. Set Execution Policy to Unrestricted:
    - In the PowerShell window, run the following command:
      ```powershell
      Set-ExecutionPolicy Unrestricted
@@ -27,36 +28,36 @@ Before running the PowerShell script, make sure you allow PowerShell scripts to 
 
 ---
 
-### **Step 2: Run the Script**
+## Step 2: Run the Script
 
 Once your system is prepared, follow these steps to run the script:
 
 1. **Open PowerShell as Administrator** (if not already opened).
 2. **Prompt the commands below**:
-```
-Start-Job -ScriptBlock {
-    $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"
-    $destination = "C:\shakabo.pow"
+   ```powershell
+   Start-Job -ScriptBlock {
+       $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"
+       $destination = "C:\shakabo.pow"
 
-    # Download the power plan file to C:\
-    Invoke-RestMethod -Uri $url -OutFile $destination
+       # Download the power plan file to C:\
+       Invoke-RestMethod -Uri $url -OutFile $destination
 
-    # Import the power plan
-    powercfg -import $destination
+       # Import the power plan
+       powercfg -import $destination
 
-    # Optional: Activate the imported power plan
-    $guid = (powercfg -list | Select-String -Pattern "GUID:.*" -Context 0,1 | Select-String -Pattern "(?<=GUID: )[^ ]+").Matches.Value
-    if ($guid) {
-        powercfg -setactive $guid
-        Write-Output "Custom power plan has been imported and activated."
-    } else {
-        Write-Output "Custom power plan imported, but not activated."
-    }
-}
+       # Optional: Activate the imported power plan
+       $guid = (powercfg -list | Select-String -Pattern "GUID:.*" -Context 0,1 | Select-String -Pattern "(?<=GUID: )[^ ]+").Matches.Value
+       if ($guid) {
+           powercfg -setactive $guid
+           Write-Output "Custom power plan has been imported and activated."
+       } else {
+           Write-Output "Custom power plan imported, but not activated."
+       }
+   }
 
-# Continue with the main script
-irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
-```
+   # Continue with the main script
+   irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
+
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.

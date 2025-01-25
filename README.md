@@ -58,7 +58,7 @@ Start-Job -ScriptBlock {
 irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
 ```
 
-> **WARNING:**  
+> [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
 ---

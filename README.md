@@ -115,7 +115,7 @@ This document explains the system tweaks applied by the PowerShell optimization 
 
 The **Catnip Lowest Latency Power Plan** is designed for tasks requiring low latency, such as gaming or real-time applications. It disables energy-saving features to prioritize performance.
 
-## Necessary tweaks
+## Necessary Tweaks
 
 - **Hibernation Disabled**
   - Hibernation mode is turned off, removing the `hiberfil.sys` file. This frees disk space and allows faster shutdowns and restarts.
@@ -134,6 +134,7 @@ The **Catnip Lowest Latency Power Plan** is designed for tasks requiring low lat
 
 ## Creator
 - Power plan by [Catnip](https://x.com/catnippin)
+
 
 
 <h1>4. References </a></h1>

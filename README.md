@@ -82,3 +82,11 @@ After running the script, you may want to return the PowerShell execution policy
 2. Run the following command:
    ```powershell
    Set-ExecutionPolicy Restricted
+
+
+
+<h2 id="other-resources">2.1. Other Resources <a href="#other-resources">(permalink)</a></h2>
+
+- [BoringBoredom/PC-Optimization-Hub](https://github.com/BoringBoredom/PC-Optimization-Hub)
+- [Calypto's Latency Guide](https://calypto.us)
+- [djdallmann/GamingPCSetup](https://github.com/djdallmann/GamingPCSetup)

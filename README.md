@@ -54,9 +54,10 @@ Once your system is prepared, follow these steps to run the script:
            Write-Output "Custom power plan imported, but not activated."
        }
    }
-
-   # Continue with the main script
+   
    irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
+
+This PowerShell script automatically downloads and imports a custom power plan (shakabo.pow) from the shooki-opt repository, saving it to C:\ and optionally activating it. It also runs the main shooki-opt script via iex irm, providing access to the optimization toolkit.
 
 
 > [!WARNING]  

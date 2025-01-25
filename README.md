@@ -43,7 +43,7 @@ Before running the script, you may want to review its contents for safety.
 
 2. Open the script with a text editor, such as **Notepad** or **VS Code**, to review its contents.
 
-> **Caution**  
+> [!CAUTION]  
 > Always review scripts from untrusted sources before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
 
 ### **Step 4: Run the Script**
@@ -64,21 +64,21 @@ Once you've reviewed the script, follow these steps to run it:
    - Press **Enter**.
    - Grant **admin privileges** if prompted by the User Account Control (UAC).
 
-> **Warning**  
+> [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
 ### **Step 5: Administrative Privileges**
 
 Since the script makes changes to your system’s settings, it requires administrator privileges. When prompted by UAC (User Account Control), click **Yes** to allow the script to make the necessary changes.
 
-> **Warning**  
+> [!WARNING]  
 > Be aware that running scripts with administrative privileges can make significant changes to your system. Ensure you trust the script's source and understand its actions.
 
 ### **Step 6: Apply the Catnip Power Plan**
 
 Once the script is executed successfully, it will automatically apply the **Catnip Lowest Latency Power Plan** (`.pow` file) to ensure optimal system performance for low-latency tasks.
 
-> **Caution**  
+> [!CAUTION]  
 > The **Catnip Lowest Latency Power Plan** optimizes the system for low-latency tasks. While this can improve performance for certain applications (such as gaming or real-time processing), it may reduce battery life on laptops and increase power consumption. Use this plan if performance is a priority.
 
 ### **Step 7: Reset Execution Policy (Optional)**

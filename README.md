@@ -115,10 +115,10 @@ This document explains the system tweaks applied by the PowerShell optimization 
 
 The **Catnip Lowest Latency Power Plan** is designed for tasks requiring low latency, such as gaming or real-time applications. It disables energy-saving features to prioritize performance.
 
-> [!CAUTION]  
+> [!NOTE]  
 > This power plan is best suited for desktop systems where power usage is not a concern.
 
-> [!CAUTION]  
+> [!TIP]  
 > Ensure proper cooling as components may generate more heat due to continuous high performance.
 
 ## Necessary Tweaks

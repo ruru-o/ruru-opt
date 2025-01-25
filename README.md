@@ -67,21 +67,14 @@ Once you've reviewed the script, follow these steps to run it:
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
-### **Step 5: Administrative Privileges**
-
-Since the script makes changes to your system’s settings, it requires administrator privileges. When prompted by UAC (User Account Control), click **Yes** to allow the script to make the necessary changes.
-
-> [!WARNING]  
-> Be aware that running scripts with administrative privileges can make significant changes to your system. Ensure you trust the script's source and understand its actions.
-
-### **Step 6: Apply the Catnip Power Plan**
+### **Step 5: Apply the Catnip Power Plan**
 
 Apply the **Catnip Lowest Latency Power Plan** (.pow file) through the script to optimize system performance for low-latency tasks. 
 
 > [!CAUTION]  
 > The **Catnip Lowest Latency Power Plan** disables power-saving features to prioritize performance, reducing latency for tasks like gaming or real-time processing. This may increase power consumption and reduce battery life on laptops. Use it when performance matters most.
 
-### **Step 7: Reset Execution Policy (Optional)**
+### **Step 6: Reset Execution Policy (Optional)**
 
 After running the script, you may want to return the PowerShell execution policy to its default setting:
 

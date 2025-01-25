@@ -9,16 +9,16 @@ This PowerShell script implements several system optimizations for Windows, focu
 ..
 
 <h1>2. Getting Started </a></h1>
-## Step 1: Prepare Your System
+### ***Step 1: Prepare Your System***
 
 Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system.
 
-### 1. Open PowerShell as Administrator:
+### 1. **Open PowerShell as Administrator:**
    - Click the **Start Menu** and search for **PowerShell**.
    - Right-click **Windows PowerShell** and select **Run as Administrator**.
    - Confirm with **Yes** if prompted.
 
-### 2. Set Execution Policy to Unrestricted:
+### 2. **Set Execution Policy to Unrestricted:**
    - In the PowerShell window, run the following command:
      ```powershell
      Set-ExecutionPolicy Unrestricted
@@ -27,7 +27,7 @@ Before running the PowerShell script, make sure you allow PowerShell scripts to 
 
 ---
 
-## **Step 2: Run the Script**
+### **Step 2: Run the Script**
 
 Once your system is prepared, follow these steps to run the script:
 

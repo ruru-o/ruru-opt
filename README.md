@@ -6,25 +6,78 @@
 <h1>1. Introduction </a></h1>
 This PowerShell script implements several system optimizations for Windows, focusing on power plan configurations, CPU scheduling, and registry adjustments to improve system performance and minimize input lag. It customizes active power plans to prioritize performance, optimizes CPU scheduling for better resource distribution, and tweaks registry settings to improve system responsiveness, including changes to I/O scheduling and background processes. 
 
-<h1>2. Getting Started </a></h1>
+..
 
-### **Step 1: Prepare Your System**
+<h1>2. Getting Started </a></h1>
+## **Step 1: Prepare Your System**
 
 Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system.
 
-1. **Open PowerShell as Administrator**:
+### 1. **Open PowerShell as Administrator**:
    - Click the **Start Menu** and search for **PowerShell**.
    - Right-click **Windows PowerShell** and select **Run as Administrator**.
    - Confirm with **Yes** if prompted.
 
-2. **Set Execution Policy to Unrestricted**:
+### 2. **Set Execution Policy to Unrestricted**:
    - In the PowerShell window, run the following command:
      ```powershell
      Set-ExecutionPolicy Unrestricted
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
-### **Step 2: Download the Required Files**
+---
+
+## **Step 2: Run the Script**
+
+Once your system is prepared, follow these steps to run the script:
+
+1. **Open PowerShell as Administrator** (if not already opened).
+2. **use the commands below**:
+   - Use the `cd` command in PowerShell to go to the directory containing `shooki-opt.ps1`. For example:
+# Background job to download and import the power plan
+```
+Start-Job -ScriptBlock {
+    $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"
+    $destination = "C:\shakabo.pow"
+
+    # Download the power plan file to C:\
+    Invoke-RestMethod -Uri $url -OutFile $destination
+
+    # Import the power plan
+    powercfg -import $destination
+
+    # Optional: Activate the imported power plan
+    $guid = (powercfg -list | Select-String -Pattern "GUID:.*" -Context 0,1 | Select-String -Pattern "(?<=GUID: )[^ ]+").Matches.Value
+    if ($guid) {
+        powercfg -setactive $guid
+        Write-Output "Custom power plan has been imported and activated."
+    } else {
+        Write-Output "Custom power plan imported, but not activated."
+    }
+}
+
+# Continue with the main script
+irm https://raw.githubusercontent.com/ruru-o/shooki-opt/refs/heads/main/shooki-opt/shooki-opt.ps1 | iex
+```
+
+> **WARNING:**  
+> The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
+
+---
+
+## **Step 3: Reset Execution Policy (Optional)**
+
+After running the script, you may want to return the PowerShell execution policy to its default setting:
+
+1. Open **PowerShell as Administrator**.
+2. Run the following command:
+   ```powershell
+   Set-ExecutionPolicy Restricted
+..
+
+<h1>3. Manual Installation </a></h1>
+
+### **Step 1: Download the Required Files**
 
 To optimize your system, download the following files:
 
@@ -35,7 +88,7 @@ To optimize your system, download the following files:
 2. **Download the Optimization Script:**
    - Ensure the **`shooki-opt.ps1`** script is ready to run.
 
-### **Step 3: Open and Review the Script**
+### **Step 2: Open and Review the Script**
 
 Before running the script, you may want to review its contents for safety.
 

@@ -117,8 +117,6 @@ The **Catnip Lowest Latency Power Plan** is designed for tasks requiring low lat
 
 > [!CAUTION]  
 > This power plan is best suited for desktop systems where power usage is not a concern.
-
-> [!CAUTION]  
 > Ensure proper cooling as components may generate more heat due to continuous high performance.
 
 ## Necessary Tweaks

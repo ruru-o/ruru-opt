@@ -3,6 +3,7 @@
 <h1>1. Introduction </a></h1>
 This PowerShell script implements several system optimizations for Windows, focusing on power plan configurations, CPU scheduling, and registry adjustments to improve system performance and minimize input lag. It customizes active power plans to prioritize performance, optimizes CPU scheduling for better resource distribution, and tweaks registry settings to improve system responsiveness, including changes to I/O scheduling and background processes. 
 
+
 > [!NOTE]
 > While the script is designed to handle errors, unexpected issues may still occur. A system backup is strongly recommended before running the script, and users should ensure their system meets the necessary prerequisites for the adjustments to work correctly. 
 
@@ -43,6 +44,7 @@ Before running the script, you may want to review its contents for safety.
 
 2. Open the script with a text editor, such as **Notepad** or **VS Code**, to review its contents.
 
+
 > [!CAUTION]  
 > Always review scripts from untrusted sources before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
 
@@ -64,6 +66,7 @@ Once you've reviewed the script, follow these steps to run it:
    - Press **Enter**.
    - Grant **admin privileges** if prompted by the User Account Control (UAC).
 
+
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
@@ -71,8 +74,10 @@ Once you've reviewed the script, follow these steps to run it:
 
 Apply the **Catnip Lowest Latency Power Plan** (.pow file) through the script to optimize system performance for low-latency tasks. 
 
+
 > [!CAUTION]  
 > The **Catnip Lowest Latency Power Plan** disables power-saving features to prioritize performance, reducing latency for tasks like gaming or real-time processing. This may increase power consumption and reduce battery life on laptops. Use it when performance matters most.
+
 
 ### **Step 6: Reset Execution Policy (Optional)**
 

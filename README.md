@@ -82,6 +82,9 @@ After running the script, you may want to return the PowerShell execution policy
 
 <h1>3. Documentation </a></h1>
 
+> [!CAUTION]  
+> Under construction. Needs more technical description.
+
 This document explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
 
 | **Name**                           | **Description**                                                                                                                                                                                | **Action**                                                                                                                                                               |

@@ -84,6 +84,10 @@ After running the script, you may want to return the PowerShell execution policy
    Set-ExecutionPolicy Restricted
    ```
 
+# 3. Documentation
+
+This document explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
+
 | **Name**                           | **Description**                                                                                                                                                                                | **Action**                                                                                                                                                               |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Disable Windows Update**         | Prevents automatic Windows updates, reducing background activity and interruptions.                                                                                                             | Disables updates via registry, including update service, notifications, and driver searches.                                                                            |

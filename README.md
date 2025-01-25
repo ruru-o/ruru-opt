@@ -5,3 +5,5 @@ This PowerShell script implements several system optimizations for Windows, focu
 > [!NOTE]
 > While the script is designed to handle errors, unexpected issues may still occur. A system backup is strongly recommended before running the script, and users should ensure their system meets the necessary prerequisites for the adjustments to work correctly. Always validate statements through evidence, research and benchmarks.
 
+> [!CAUTION]
+> **Do NOT** apply unknown or undocumented changes, programs, or scripts without fully understanding their impact on security, privacy, and performance.

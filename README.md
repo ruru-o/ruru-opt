@@ -8,10 +8,10 @@ This PowerShell script implements several system optimizations for Windows, focu
 
 <h1>2. Getting Started </a></h1>
 
+> [!WARNING]
+> Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system. 
+
 ## 2.1 Prepare Your System
-
-Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system.
-
 ### 1. Open PowerShell as Administrator:
    - Click the **Start Menu** and search for **PowerShell**.
    - Right-click **Windows PowerShell** and select **Run as Administrator**.

@@ -24,8 +24,6 @@ Before running the PowerShell script, make sure you allow PowerShell scripts to 
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
----
-
 ## Step 2: Run the Script
 
 Once your system is prepared, follow these steps to run the script:
@@ -46,8 +44,6 @@ This command will:
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
-
----
 
 ## **Step 3: Reset Execution Policy (Optional)**
 

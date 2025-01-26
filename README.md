@@ -88,14 +88,14 @@ Once you've reviewed the script, follow these steps to run it:
 
 1. **Open PowerShell as Administrator** (if not already opened).
 2. **Navigate to the Script Folder**:
-   - Use the `cd` command in PowerShell to go to the directory containing `shooki-opt.ps1`. For example:
+   - Use the `cd` command in PowerShell to go to the directory containing `ruru-opt.ps1`. For example:
      ```powershell
      cd "C:\Path\To\Your\Script"
      ```
 3. **Run the Script**:
    - Execute the script with the following command:
      ```powershell
-     .\shooki-opt.ps1
+     .\ruru-opt.ps1
      ```
    - Press **Enter**.
    - Grant **admin privileges** if prompted by the User Account Control (UAC).

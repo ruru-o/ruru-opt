@@ -26,6 +26,9 @@ This PowerShell script implements several system optimizations for Windows, focu
 
 ## 2.2 Run the Script
 
+> [!WARNING]  
+> The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.****
+
 Once your system is prepared, follow these steps to run the script:
 
 1. **Open PowerShell as Administrator** (if not already opened).
@@ -41,9 +44,6 @@ Once your system is prepared, follow these steps to run the script:
 This command will:
 - Download the catnip lowest latency power plan to C:\ in the background.
 - Run the main shooki-opt.ps1 script to apply optimizations.
-
-> [!WARNING]  
-> The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
 ## **2.3 Reset Execution Policy (Optional)**
 

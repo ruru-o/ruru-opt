@@ -1,4 +1,7 @@
-# ruru-opt
+# ruru-opt 
+
+![image](https://github.com/user-attachments/assets/fe8dc43a-8b2c-4381-a4f4-1e34eb7d55ec)
+
 
 > [!NOTE]
 > While the script is designed to handle errors, unexpected issues may still occur. A system backup is strongly recommended before running the script, and users should ensure their system meets the necessary prerequisites for the adjustments to work correctly. 

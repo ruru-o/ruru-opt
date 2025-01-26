@@ -51,7 +51,9 @@ Once your system is prepared, follow these steps to run the script:
    # run the main shooki-opt script (main script)
    irm https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shooki-opt.ps1 | iex
 
-This PowerShell script automatically downloads a custom power plan (shakabo.pow) from the shooki-opt repository, saving it to <C:\>. It also runs the main shooki-opt script via iex irm, providing access to the optimization toolkit.
+This command will:
+- Download the catnip lowest latency power plan to C:\ in the background.
+- Run the main shooki-opt.ps1 script to apply optimizations and handle the power plan import automatically.
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.

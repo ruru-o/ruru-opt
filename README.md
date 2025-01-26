@@ -38,7 +38,7 @@ Once your system is prepared, follow these steps to run the script:
    Use the code below to automatically download and import the custom power plan and run the main `shooki-opt.ps1` script.
 
    ```powershell
-   Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/shooki-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/shooki-opt/ruru-opt.ps1 | iex
+   Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
 
 
 This command will:

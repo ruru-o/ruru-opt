@@ -1518,8 +1518,8 @@ $asciiArtStart = @"
  | |  | |_| | |  | |_| |          | (_) | |_) | |_ 
  |_|   \__,_|_|   \__,_|           \___/| .__/ \__|
                                         | |        
-                                        |_|               
-  ruru windows meowkit
+                                        |_|                    
+ ------        ruru windows meowkit          ------
 "@
 Write-Host $asciiArtStart -ForegroundColor White
 

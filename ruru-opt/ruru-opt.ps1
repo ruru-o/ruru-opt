@@ -35,7 +35,7 @@ if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administra
     exit
 }
 
-# Define comprehensive tweaks
+# Tweaks
 $tweaks = @(
     @{ 
         Name = "Disable Windows Update"
@@ -1209,11 +1209,10 @@ function Create-OptimizationGUI {
     $form.BackColor = $backgroundColor
     $form.ForeColor = $lightTextColor
 
-    # Updated Font Selections
     # Title Font - More Distinct
     $titleFont = New-Object System.Drawing.Font("Consolas", 32, [System.Drawing.FontStyle]::Bold)
     
-    # Header and Body Fonts - More Command-Line Like
+    # Header
     $headerFont = New-Object System.Drawing.Font("Consolas", 14, [System.Drawing.FontStyle]::Regular)
     $buttonFont = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)
 
@@ -1223,12 +1222,11 @@ function Create-OptimizationGUI {
     $mainPanel.BackColor = $backgroundColor
     $form.Controls.Add($mainPanel)
 
-# Custom Title Font Creation
-$titleFont = New-Object System.Drawing.Font([System.Drawing.FontFamily]::GenericMonospace, 32, [System.Drawing.FontStyle]::Bold)
+    $titleFont = New-Object System.Drawing.Font([System.Drawing.FontFamily]::GenericMonospace, 32, [System.Drawing.FontStyle]::Bold)
 
-$primaryColor = [System.Drawing.Color]::White  # Example: Set it to black, change as needed
+    $primaryColor = [System.Drawing.Color]::White 
 
-    # Title Label with Glow Effect
+    # Title
     $titleLabel = New-Object System.Windows.Forms.Label
     $titleLabel.Text = "ruru - opt"
     $titleLabel.Font = $titleFont
@@ -1238,23 +1236,22 @@ $primaryColor = [System.Drawing.Color]::White  # Example: Set it to black, chang
     $titleLabel.Height = 80
     $mainPanel.Controls.Add($titleLabel)
 
-# Subtitle Label with CMD Font (Positioned directly under title with minimal space)
+# Subtitle Label
 $subtitleLabel = New-Object System.Windows.Forms.Label
 $subtitleLabel.Text = "ruru windows meowkit"
-$subtitleLabel.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  # CMD font
-$subtitleLabel.ForeColor = $primaryColor  # Now $primaryColor is defined
+$subtitleLabel.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  
+$subtitleLabel.ForeColor = $primaryColor 
 $subtitleLabel.TextAlign = [System.Drawing.ContentAlignment]::MiddleCenter
-$subtitleLabel.Width = $mainPanel.Width  # Ensure subtitle also stretches across the panel
-$subtitleLabel.Height = 12  # Adjust height to ensure it fits well
-$subtitleLabel.Top = $titleLabel.Bottom + 2  # 1mm gap (approximately 3px) between title and subtitle
+$subtitleLabel.Width = $mainPanel.Width  
+$subtitleLabel.Height = 12  
+$subtitleLabel.Top = $titleLabel.Bottom + 2 
 $mainPanel.Controls.Add($subtitleLabel)
 
     # Left Panel for Tweaks
     $tweaksPanel = New-Object System.Windows.Forms.Panel
     $tweaksPanel.Location = New-Object System.Drawing.Point(40, 120)
-    $tweaksPanel.Size = New-Object System.Drawing.Size(600, 700)  # Increased height
+    $tweaksPanel.Size = New-Object System.Drawing.Size(600, 700) 
     $tweaksPanel.BackColor = $secondaryBackColor
-    $tweaksPanel.AutoScroll = $false  # Removed auto-scroll
     $mainPanel.Controls.Add($tweaksPanel)
 
     # Right Panel for Power Plan
@@ -1300,7 +1297,7 @@ $activatorLabel.ForeColor = $accentColor
 $activatorLabel.AutoSize = $true
 $powerPlanPanel.Controls.Add($activatorLabel)
 
-# MAS-AIO Button under Activator
+# MAS-AIO Button
 $masAIOButton = New-StyledButton -Text 'Run MAS-AIO' -Location (New-Object System.Drawing.Point(20, 378)) -Size (New-Object System.Drawing.Size(360, 40))
 $powerPlanPanel.Controls.Add($masAIOButton)
 $masAIOButton.Add_Click({ Invoke-MASActivation }) 
@@ -1334,7 +1331,7 @@ $masAIOButton.Add_Click({ Invoke-MASActivation })
     $powerPlanPanel.Controls.Add($deletePowerPlansButton)
     $deletePowerPlansButton.Add_Click({ Remove-StandardPowerPlans })
 
-    # New Button to Restore Default Power Plans
+    # Restore Default Power Plans
     $restoreDefaultPowerPlansButton = New-StyledButton -Text 'Restore Default Power Plans' -Location (New-Object System.Drawing.Point(20, 200)) -Size (New-Object System.Drawing.Size(360, 40))
     $powerPlanPanel.Controls.Add($restoreDefaultPowerPlansButton)
     $restoreDefaultPowerPlansButton.Add_Click({ Restore-DefaultPowerPlans })
@@ -1362,7 +1359,7 @@ foreach ($category in $categories) {
         $checkbox.ForeColor = $lightTextColor
         $checkbox.Tag = $tweak
 
-        # Tooltip creation
+        # desc
         $toolTip = New-Object System.Windows.Forms.ToolTip
         $toolTip.SetToolTip($checkbox, $tweak.Description)
 
@@ -1381,68 +1378,64 @@ foreach ($category in $categories) {
     $checkbox.Font = $buttonFont
     $checkbox.ForeColor = $lightTextColor
     $checkbox.Tag = $tweak
-    
-    # Add tooltip functionality
     $toolTip = New-Object System.Windows.Forms.ToolTip
     $toolTip.SetToolTip($checkbox, $tweak.Description)
     
     $tweaksPanel.Controls.Add($checkbox)
     $y += 30
 
-# In GUI creation section, add this button
+# GUI
 $toggleIdleStatesButton = New-StyledButton -Text 'Toggle Processor Idle States' -Location (New-Object System.Drawing.Point(20, 260)) -Size (New-Object System.Drawing.Size(360, 40))
 $powerPlanPanel.Controls.Add($toggleIdleStatesButton)
 
 $toggleIdleStatesButton.Add_Click({
-    # Create a new form with dark mode settings and CMD font style
+
     $form = New-Object System.Windows.Forms.Form
     $form.Text = 'Choose Processor Idle State'
-    $form.Size = New-Object System.Drawing.Size(460, 250) # Adjust form size to fit elements
-    $form.StartPosition = 'CenterScreen' # Position the form in the center of the screen
+    $form.Size = New-Object System.Drawing.Size(460, 250) 
+    $form.StartPosition = 'CenterScreen' 
     $form.BackColor = [System.Drawing.Color]::FromArgb(30, 30, 30)
     $form.ForeColor = [System.Drawing.Color]::White
-
-    # Add a label with more readable text and CMD font
     $label = New-Object System.Windows.Forms.Label
     $label.Text = 'Choose how you want to manage Processor Idle States:' + "`n`n" + 
                  '1. Disable Idle States: More responsive, higher temperature and power usage.' + "`n`n" +
                  '2. Enable Idle States: Less responsive, lower temperature and power usage (Windows default).'
-    $label.Size = New-Object System.Drawing.Size(420, 100) # Adjust size to fit text
+    $label.Size = New-Object System.Drawing.Size(420, 100) 
     $label.Location = New-Object System.Drawing.Point(20, 20)
-    $label.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  # CMD font
+    $label.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  
     $label.TextAlign = 'MiddleLeft'
     $form.Controls.Add($label)
 
-    # Add radio buttons with dark theme and CMD font
+    # radio buttons
     $buttonWidth = 180
 
-    # Left-side radio button (Enable Idle States)
+    # (Enable Idle States)
     $enableRadioButton = New-Object System.Windows.Forms.RadioButton
     $enableRadioButton.Text = 'Enable Idle States'
     $enableRadioButton.Location = New-Object System.Drawing.Point(20, 130) 
     $enableRadioButton.Size = New-Object System.Drawing.Size($buttonWidth, 20)
-    $enableRadioButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  # CMD font
+    $enableRadioButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  
     $enableRadioButton.Checked = $true  # Default to Enable
     $enableRadioButton.ForeColor = [System.Drawing.Color]::White
     $enableRadioButton.BackColor = [System.Drawing.Color]::FromArgb(50, 50, 50)
     $form.Controls.Add($enableRadioButton)
 
-    # Right-side radio button (Disable Idle States)
+    # (Disable Idle States)
     $disableRadioButton = New-Object System.Windows.Forms.RadioButton
     $disableRadioButton.Text = 'Disable Idle States'
-    $disableRadioButton.Location = New-Object System.Drawing.Point(240, 130) # Positioned to the right
+    $disableRadioButton.Location = New-Object System.Drawing.Point(240, 130) 
     $disableRadioButton.Size = New-Object System.Drawing.Size($buttonWidth, 20)
-    $disableRadioButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular)  # CMD font
+    $disableRadioButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Regular) 
     $disableRadioButton.ForeColor = [System.Drawing.Color]::White
     $disableRadioButton.BackColor = [System.Drawing.Color]::FromArgb(50, 50, 50)
     $form.Controls.Add($disableRadioButton)
 
-    # Add Apply and Cancel buttons with consistent dark theme and CMD font
+    # Add Apply and Cancel buttons
     $applyButton = New-Object System.Windows.Forms.Button
     $applyButton.Text = 'Apply'
-    $applyButton.Location = New-Object System.Drawing.Point(80, 180) # Adjust position
+    $applyButton.Location = New-Object System.Drawing.Point(80, 180) 
     $applyButton.Size = New-Object System.Drawing.Size(80, 30)
-    $applyButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Bold)  # CMD font
+    $applyButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Bold) 
     $applyButton.BackColor = [System.Drawing.Color]::FromArgb(70, 130, 180)
     $applyButton.ForeColor = [System.Drawing.Color]::White
     $applyButton.Add_Click({
@@ -1459,9 +1452,9 @@ $toggleIdleStatesButton.Add_Click({
 
     $cancelButton = New-Object System.Windows.Forms.Button
     $cancelButton.Text = 'Cancel'
-    $cancelButton.Location = New-Object System.Drawing.Point(220, 180) # Adjust position
+    $cancelButton.Location = New-Object System.Drawing.Point(220, 180) 
     $cancelButton.Size = New-Object System.Drawing.Size(80, 30)
-    $cancelButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Bold)  # CMD font
+    $cancelButton.Font = New-Object System.Drawing.Font("Consolas", 10, [System.Drawing.FontStyle]::Bold)  
     $cancelButton.BackColor = [System.Drawing.Color]::FromArgb(169, 169, 169)
     $cancelButton.ForeColor = [System.Drawing.Color]::White
     $cancelButton.Add_Click({
@@ -1469,11 +1462,10 @@ $toggleIdleStatesButton.Add_Click({
     })
     $form.Controls.Add($cancelButton)
 
-    # Show the form
     $form.ShowDialog()
 })
 
-    # Select All and Unselect All Button Functionality
+    # Select All and Unselect All Button
     $selectAllButton.Add_Click({
         $tweaksPanel.Controls | Where-Object { $_ -is [System.Windows.Forms.CheckBox] } | ForEach-Object {
             $_.Checked = $true
@@ -1486,7 +1478,7 @@ $toggleIdleStatesButton.Add_Click({
         }
     })
 
-    # Apply Button Functionality
+    # Apply Button
     $applyButton.Add_Click({
         $selectedTweaks = $tweaksPanel.Controls | Where-Object { $_ -is [System.Windows.Forms.CheckBox] -and $_.Checked -and $_.Tag -ne $null }
         
@@ -1507,8 +1499,6 @@ $toggleIdleStatesButton.Add_Click({
 }
 
 
-
-# Clear the console and display ASCII art
 Clear-Host
 $asciiArtStart = @"
 --------------------------------------------------
@@ -1526,10 +1516,9 @@ $asciiArtStart = @"
 "@
 Write-Host $asciiArtStart -ForegroundColor White
 
-# Run the GUI (Replace with the actual implementation of the GUI)
 Create-OptimizationGUI
 
-# Display "COMPLETE" ASCII art after tweaks are done
+
 $asciiArtComplete = @"
                             _      _         
                            | |    | |        

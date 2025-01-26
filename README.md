@@ -69,7 +69,7 @@ After running the script, you may want to return the PowerShell execution policy
    ```powershell
    Set-ExecutionPolicy Restricted
 
-<h1>3. Manual Installation </a></h1>
+<h1>3. Manual Installation (Optional) </a></h1>
 
 ### **Step 1: Download the Required Files**
 

@@ -38,7 +38,7 @@ Once your system is prepared, follow these steps to run the script:
 
 2. **Copy and Paste the Commands Below**:
 
-   Use the code below to automatically download and import the custom power plan and run the main `shooki-opt.ps1` script.
+   Use the code below to automatically download and import the custom power plan and run the main `ruru-opt.ps1` script.
 
    ```powershell
    Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
@@ -46,7 +46,7 @@ Once your system is prepared, follow these steps to run the script:
 
 This command will:
 - Download the catnip lowest latency power plan to C:\ in the background.
-- Run the main shooki-opt.ps1 script to apply optimizations.
+- Run the main ruru-opt.ps1 script to apply optimizations.
 
 ## **2.3 Reset Execution Policy (Optional)**
 
@@ -65,16 +65,16 @@ To optimize your system, download the following files:
 
 1. **Download the Power Plan:**
    - Download the **Catnip Lowest Latency Power Plan** (`.pow` file), which will prioritize system responsiveness.
-   - Save the `.pow` file in the same directory where the **`shooki-opt.ps1`** script is stored.
+   - Save the `.pow` file in the same directory where the **`ruru-opt.ps1`** script is stored.
 
 2. **Download the Optimization Script:**
-   - Ensure the **`shooki-opt.ps1`** script is ready to run.
+   - Ensure the **`ruru-opt.ps1`** script is ready to run.
 
 ### **Step 2: Open and Review the Script**
 
 Before running the script, you may want to review its contents for safety.
 
-1. Navigate to the folder where you saved the `shooki-opt.ps1` script and the `.pow` file.
+1. Navigate to the folder where you saved the `ruru-opt.ps1` script and the `.pow` file.
 
 2. Open the script with a text editor, such as **Notepad** or **VS Code**, to review its contents.
 

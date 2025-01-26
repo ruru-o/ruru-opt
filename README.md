@@ -39,16 +39,16 @@ Once your system is prepared, follow these steps to run the script:
    Use the code below to automatically download and import the custom power plan and run the main `shooki-opt.ps1` script.
 
    ```powershell
-   # Step 1: Download the custom power plan in the background
+   # download the catnip power plan in the background
    Start-Job -ScriptBlock {
        $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"
        $destination = "C:\shakabo.pow"
 
-       # Download the power plan file to C:\
+       # download the power plan file to C:\
        Invoke-RestMethod -Uri $url -OutFile $destination
    } | Out-Null
 
-   # Step 2: Run the main shooki-opt script
+   # run the main shooki-opt script (main script)
    irm https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shooki-opt.ps1 | iex
 
 This PowerShell script automatically downloads a custom power plan (shakabo.pow) from the shooki-opt repository, saving it to <C:\>. It also runs the main shooki-opt script via iex irm, providing access to the optimization toolkit.

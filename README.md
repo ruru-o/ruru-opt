@@ -39,17 +39,8 @@ Once your system is prepared, follow these steps to run the script:
    Use the code below to automatically download and import the custom power plan and run the main `shooki-opt.ps1` script.
 
    ```powershell
-   # download the catnip power plan in the background
-   Start-Job -ScriptBlock {
-       $url = "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow"
-       $destination = "C:\shakabo.pow"
+   Start-Job { Invoke-RestMethod -Uri "https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shooki-opt.ps1 | iex
 
-       # download the power plan file to C:\
-       Invoke-RestMethod -Uri $url -OutFile $destination
-   } | Out-Null
-
-   # run the main shooki-opt script (main script)
-   irm https://raw.githubusercontent.com/ruru-o/shooki-opt/main/shooki-opt/shooki-opt.ps1 | iex
 
 This command will:
 - Download the catnip lowest latency power plan to C:\ in the background.

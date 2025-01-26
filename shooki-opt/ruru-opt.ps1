@@ -1511,6 +1511,8 @@ $toggleIdleStatesButton.Add_Click({
 # Clear the console and display ASCII art
 Clear-Host
 $asciiArtStart = @"
+--------------------------------------------------
+                 
                                                _   
                                               | |  
   _ __ _   _ _ __ _   _   ______    ___  _ __ | |_ 
@@ -1519,7 +1521,8 @@ $asciiArtStart = @"
  |_|   \__,_|_|   \__,_|           \___/| .__/ \__|
                                         | |        
                                         |_|                    
- ------        ruru windows meowkit          ------
+-------------- ruru windows meowkit --------------
+                    v0.0.1
 "@
 Write-Host $asciiArtStart -ForegroundColor White
 

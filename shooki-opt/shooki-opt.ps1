@@ -1196,7 +1196,7 @@ function Create-OptimizationGUI {
     [System.Windows.Forms.Application]::EnableVisualStyles()
     
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = 'Shooki-Opt'
+    $form.Text = 'ruru-opt'
     $form.Size = New-Object System.Drawing.Size(1100, 920)
     $form.StartPosition = 'CenterScreen'
     
@@ -1230,7 +1230,7 @@ $primaryColor = [System.Drawing.Color]::White  # Example: Set it to black, chang
 
     # Title Label with Glow Effect
     $titleLabel = New-Object System.Windows.Forms.Label
-    $titleLabel.Text = "shooki - opt"
+    $titleLabel.Text = "ruru - opt"
     $titleLabel.Font = $titleFont
     $titleLabel.ForeColor = $accentColor
     $titleLabel.TextAlign = [System.Drawing.ContentAlignment]::MiddleCenter
@@ -1511,15 +1511,15 @@ $toggleIdleStatesButton.Add_Click({
 # Clear the console and display ASCII art
 Clear-Host
 $asciiArtStart = @"
-      _                 _    _                        _   
-     | |               | |  (_)                      | |  
-  ___| |__   ___   ___ | | ___   ______    ___  _ __ | |_ 
- / __| '_ \ / _ \ / _ \| |/ / | |______|  / _ \| '_ \| __|
- \__ \ | | | (_) | (_) |   <| |          | (_) | |_) | |_ 
- |___/_| |_|\___/ \___/|_|\_\_|           \___/| .__/ \__|
-                                               | |        
-                                               |_|        
-  shooki windows meowkit
+                                               _   
+                                              | |  
+  _ __ _   _ _ __ _   _   ______    ___  _ __ | |_ 
+ | '__| | | | '__| | | | |______|  / _ \| '_ \| __|
+ | |  | |_| | |  | |_| |          | (_) | |_) | |_ 
+ |_|   \__,_|_|   \__,_|           \___/| .__/ \__|
+                                        | |        
+                                        |_|               
+  ruru windows meowkit
 "@
 Write-Host $asciiArtStart -ForegroundColor White
 

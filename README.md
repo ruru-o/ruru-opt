@@ -1,4 +1,4 @@
-# ruru-opt 
+# ruru-opt // windows optimization meowkit
 
 ![image](https://github.com/user-attachments/assets/fe8dc43a-8b2c-4381-a4f4-1e34eb7d55ec)
 

@@ -120,18 +120,12 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 
 ## Kernel Adjustments
 
-1. DPC Watchdog Disabled
-- Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
-2. Interrupt Steering Adjusted
-- Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention.
-3. DPC Queue and Scheduling Adjustments
-- Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
-4. Speculative Execution Mitigations Disabled
-- Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.
-5. Exception Chain Validation Disabled
-- Disables the validation of exception chains, allowing faster execution at the cost of less security for exception handling.
-6. Disabling Unnecessary Features
-- Disables thread DPC processing, foreground boost decay, and per-CPU clock tick scheduling, and reducing overhead.
+1. DPC Watchdog Disabled - Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
+2. Interrupt Steering Adjusted - Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention.
+3. DPC Queue and Scheduling Adjustments - Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
+4. Speculative Execution Mitigations Disabled - Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.
+5. Exception Chain Validation Disabled - Disables the validation of exception chains, allowing faster execution at the cost of less security for exception handling.
+6. Disabling Unnecessary Features - Disables thread DPC processing, foreground boost decay, and per-CPU clock tick scheduling, and reducing overhead.
                                                                             
 
 ## Catnip Lowest Latency Power Plan

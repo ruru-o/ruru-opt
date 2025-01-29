@@ -121,7 +121,6 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 ## Kernel Operations
 
 - **DPC Watchdog Disabled**: Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
-- **Optimal Timer Resolution**: Adjusts timer resolution to `1`, ensuring system timers are more accurate and reducing potential latency in time-sensitive operations.
 - **Interrupt Steering Adjusted**: Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention and improving overall system performance.
 - **DPC Queue and Scheduling Adjustments**: Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
 - **Speculative Execution Mitigations Disabled**: Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.

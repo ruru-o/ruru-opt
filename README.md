@@ -80,7 +80,7 @@ Before running the script, you may want to review its contents for safety.
 
 
 > [!CAUTION]  
-> Always review scripts from untrusted sources before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
+> Always review scripts before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
 
 ### **Step 4: Run the Script**
 
@@ -117,24 +117,26 @@ After running the script, you may want to return the PowerShell execution policy
 <h1>3. Documentation </a></h1>
 
 > [!CAUTION]  
-> Under construction. Needs more technical description.
+> Always review scripts before running them. 
 
 This document explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
 
-| Tweak | Description | Technical Implementation | Impact |
-|-------|-------------|-------------------------|---------|
-| Disable Windows Update | Prevents automatic updates by modifying core update policies. Sets `DoNotConnectToWindowsUpdateInternetLocations=1`, `TrayIconVisibility=0`, `AUOptions=1`. | Modifies registry keys under `HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` and related paths. | Eliminates background update processes and network activity, but leaves system potentially vulnerable to security issues. |
-| Disable Windows Defender | Comprehensively disables Windows security features by setting multiple registry values to `0` or `4`. Disables real-time protection, behavior monitoring, and sample submission. | Modifies extensive registry paths including `HKLM:\SOFTWARE\Microsoft\Windows Defender` and related service configurations. Sets all security service startup types to `4` (Disabled). | Significant performance improvement but removes critical system protection. Alternative security measures strongly recommended. |
-| Disable Game Bar | Removes gaming overlay and background recording features. Sets `ActivationType=0` for the Game Bar presence writer. | Modifies registry under `HKLM:\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId` and disables related protocols. | Reduces gaming-related background processes and potential frame drops. |
-| Disable Background Apps | Prevents UWP apps from running in background by setting `LetAppsRunInBackground=2`. | Modifies `HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy`. | Reduces memory usage and background CPU utilization. |
-| Disable Telemetry | Blocks data collection by setting `AllowTelemetry=0`, disabling DiagTrack service (value `4`), and limiting diagnostic logs. | Modifies multiple registry paths under `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection`. | Improves privacy and reduces background network activity. |
-| Disable UAC | Disables User Account Control by setting multiple security parameters to `0`. | Modifies `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` with comprehensive security parameter changes. | Removes permission prompts but significantly reduces security. |
-| Disable Superfetch/Prefetch | Disables Windows' predictive file and application loading by setting SysMain service to `4` (Disabled). | Modifies service configuration in registry under `HKLM:\SYSTEM\CurrentControlSet\Services\SysMain`. | Can improve SSD longevity and reduce disk activity. |
-| Force P0-State | Forces GPU to maintain highest performance state by setting `DisableDynamicPstate=1`. | Modifies GPU driver registry settings. | Ensures consistent GPU performance but increases power consumption. |
-| Optimize Memory Management | Comprehensive memory optimization including disabling page combining (`DisablePageCombining=1`) and adjusting pool sizes. | Modifies multiple values under `HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management`. | Optimizes memory usage for high-performance scenarios. |
-| Disable DPS and Threaded DPC | Disables Diagnostic Policy Service and sets `ThreadDpcEnable=0`. | Modifies kernel parameters and service configurations. | Can improve system responsiveness but may affect system diagnostics. |
-| Optimize Executive Worker Threads | Adjusts system thread management by setting additional worker threads and timer intervals. | Modifies `HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Executive` with specific thread count adjustments. | Potentially improves multi-threaded application performance. |
-| Optimize File System | Disables 8.3 filename creation and last access time updates. | Uses `fsutil` to modify system behaviors. | Improves file system performance and reduces disk overhead. |
+| Tweak Name | Description | Registry/System Changes |
+|------------|-------------|------------------------|
+| Disable Windows Update | • Prevents all Windows Update connections and background activities<br>• Disables automatic driver updates and store downloads | • `DoNotConnectToWindowsUpdateInternetLocations` = 1 (HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate)<br>• `TrayIconVisibility` = 0 (HKLM\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings)<br>• `AUOptions` = 1 (HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update)<br>• `SearchOrderConfig` = 0 (HKLM\SOFTWARE\Policies\Microsoft\Windows\DriverSearching)<br>• `AutoDownload` = 2 (HKLM\SOFTWARE\Policies\Microsoft\WindowsStore) |
+| Disable Windows Defender | • Completely deactivates real-time protection<br>• Disables all security monitoring services<br>• Removes SmartScreen filtering<br>• Terminates Network Inspection Service | • `SpyNetReporting`, `SubmitSamplesConsent` = 0 (HKLM\SOFTWARE\Microsoft\Windows Defender\Spynet)<br>• `DisableScanOnRealtimeEnable`, `DisableBehaviorMonitoring` = 1 (HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection)<br>• Multiple service `Start` values set to 4 for: WinDefend, MsSecCore, WdBoot, WdNisDrv, SecurityHealthService<br>• `DisableAntiSpyware` = 1 (HKLM\SOFTWARE\Policies\Microsoft\Windows Defender)<br>• `EnableWebContentEvaluation` = 0 (HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\AppHost) |
+| Disable Game Bar | • Removes Game Bar presence server<br>• Disables all gaming overlay features<br>• Prevents background recording | • `ActivationType` = 0 (HKLM\SOFTWARE\Microsoft\WindowsRuntime\ActivatableClassId\Windows.Gaming.GameBar.PresenceServer.Internal.PresenceWriter)<br>• Game Bar URL protocols disabled in HKCR\ms-gamebar and HKCR\ms-gamebarservices |
+| Disable Background Apps | • Prevents UWP apps from running in background<br>• Reduces system resource usage | • `LetAppsRunInBackground` = 2 (HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy) |
+| Disable Telemetry | • Stops all diagnostic data collection<br>• Disables Connected User Experiences<br>• Prevents background feedback tasks | • `Start` = 4 (HKLM\SYSTEM\CurrentControlSet\Services\DiagTrack)<br>• `AllowTelemetry` = 0 (HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection)<br>• `LimitDiagnosticLogCollection` = 1 (HKLM\SOFTWARE\Policies\Microsoft\Windows\DataCollection) |
+| Disable UAC | • Removes all User Account Control prompts<br>• Disables secure desktop switching<br>• Eliminates elevation requirements | • Multiple UAC settings set to 0: `EnableVirtualization`, `EnableInstallerDetection`, `PromptOnSecureDesktop`, `EnableLUA`, `EnableSecureUIAPaths`, `ConsentPromptBehaviorAdmin`, `ValidateAdminCodeSignatures`, `EnableUIADesktopToggle`, `ConsentPromptBehaviorUser`, `FilterAdministratorToken` |
+| Disable Superfetch/Prefetch | • Stops predictive application loading<br>• Reduces disk activity and SSD wear | • `Start` = 4 (HKLM\SYSTEM\CurrentControlSet\Services\SysMain)<br>• Service "SysMain" stopped and disabled |
+| Disable Hibernation | • Removes hiberfil.sys file<br>• Frees up disk space<br>• Reduces power management overhead | • Executes `powercfg /h off`<br>• Removes hibernation file from system drive |
+| Optimize Memory Management | • Modifies memory handling parameters<br>• Adjusts paging behavior<br>• Optimizes cache settings | • Sets multiple memory parameters in HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management:<br>• `DisablePagingExecutive` = 1<br>• `LargeSystemCache` = 0<br>• `PhysicalAddressExtension` = 1<br>• `DisablePageCombining` = 1 |
+| Force P0-State | • Forces maximum performance state<br>• Prevents CPU power state transitions<br>• Maintains consistent processing speed | • `DisableDynamicPstate` = 1 for all PCI\VEN GPU devices<br>• Modifies GPU power management settings |
+| Disable DPS/Threaded DPC | • Adjusts Deferred Procedure Call behavior<br>• Modifies interrupt handling<br>• Optimizes CPU scheduling | • `ThreadDpcEnable` = 0 (HKLM\System\CurrentControlSet\Control\Session Manager\kernel)<br>• Windows Update Service disabled<br>• DPC queue depth and timing modifications |
+| Optimize Executive Worker Threads | • Adjusts system thread allocation<br>• Modifies thread scheduling parameters<br>• Enhances thread management | • `AdditionalCriticalWorkerThreads` = 6<br>• `AdditionalDelayedWorkerThreads` = 6<br>• `UuidSequenceNumber` = 0x002eaebf<br>• `CoalescingTimerInterval` = 0 |
+| Power Management Optimization | • Maximizes performance settings<br>• Disables power saving features<br>• Maintains consistent system state | • `HibernateEnabledDefault`, `HibernateEnabled` = 0<br>• `CoalescingTimerInterval` = 0<br>• `DisableSensorWatchdog` = 1<br>• `FxVSyncEnabled` = 0<br>• `SleepStudyDisabled` = 1 |
+| Kernel Performance Optimization | • Modifies core system behavior<br>• Adjusts interrupt processing<br>• Optimizes system call handling | • Comprehensive kernel parameter modifications including:<br>• `DpcWatchdogProfileOffset` = 0<br>• `KernelSEHOPEnabled` = 0<br>• `DisableExceptionChainValidation` = 1<br>• `ThreadDpcEnable` = 0<br>• `DPCTimeout` = 0<br>• `CacheAwareScheduling` = 5 |
                                                                             
 
 # Catnip Lowest Latency Power Plan

@@ -87,10 +87,6 @@ Once you've reviewed the script, follow these steps to run it:
    - Press **Enter**.
    - Grant **admin privileges** if prompted by the User Account Control (UAC).
 
-
-> [!WARNING]  
-> The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
-
 ### **3.4. Reset Execution Policy (Optional)**
 
 After running the script, you may want to return the PowerShell execution policy to its default setting:

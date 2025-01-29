@@ -118,7 +118,7 @@ After running the script, you may want to return the PowerShell execution policy
 > [!CAUTION]  
 > Always review scripts before running them. 
 
-This document explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
+This documentation explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
 
 | Tweak Name | Description | System Changes |
 |------------|-------------|----------------|

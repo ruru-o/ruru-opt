@@ -120,13 +120,14 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 
 ## Kernel Operations
 
-- **DPC Watchdog Disabled**: Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
-- **Interrupt Steering Adjusted**: Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention and improving overall system performance.
-- **DPC Queue and Scheduling Adjustments**: Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
-- **Speculative Execution Mitigations Disabled**: Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.
-- **Exception Chain Validation Disabled**: Disables the validation of exception chains, allowing faster execution at the cost of less security for exception handling.
-- **Timer Expiration and Boost Adjustments**: Adjusts timer expiration handling for efficient scheduling and disables automatic boost mechanisms to avoid system performance penalties.
-- **Disabling Unnecessary Features**: Disables thread DPC processing, foreground boost decay, and per-CPU clock tick scheduling, reducing overhead and improving direct system performance.
+- ``DPC Watchdog Disabled``: Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
+- ``Optimal Timer Resolution``: Adjusts timer resolution to `1`, ensuring system timers are more accurate and reducing potential latency in time-sensitive operations.
+- ``Interrupt Steering Adjusted``: Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention and improving overall system performance.
+- ``DPC Queue and Scheduling Adjustments``: Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
+- ``Speculative Execution Mitigations Disabled``: Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.
+- ``Exception Chain Validation Disabled``: Disables the validation of exception chains, allowing faster execution at the cost of less security for exception handling.
+- ``Timer Expiration and Boost Adjustments``: Adjusts timer expiration handling for efficient scheduling and disables automatic boost mechanisms to avoid system performance penalties.
+- ``Disabling Unnecessary Features``: Disables thread DPC processing, foreground boost decay, and per-CPU clock tick scheduling, reducing overhead and improving direct system performance.
                                                                             
 
 ## Catnip Lowest Latency Power Plan

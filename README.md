@@ -47,6 +47,9 @@ Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt
 
 <h1>3. Manual Installation (Optional) </a></h1>
 
+> [!CAUTION]  
+> Always review scripts before running them.
+
 ### **3.1. Download the Required Files**
 
 To optimize your system, download the following files:
@@ -57,9 +60,6 @@ To optimize your system, download the following files:
    - Save the `.pow` file in the same directory where the **`ruru-opt.ps1`** script is stored.
 
 ### **3.2. Open and Review the Script**
-
-> [!CAUTION]  
-> Always review scripts before running them.
 
 1. Navigate to the folder where you saved the `ruru-opt.ps1` script and the `.pow` file.
 

@@ -41,7 +41,7 @@ Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt
 ```
 
 ## What the command does:
-- **Downloads** the catnip lowest latency power plan to `C:\` in the background.
+- **Downloads** the **Catnip Lowest Latency Power Plan** (`shakabo.pow` file) plan to `C:\` in the background.
 - **Runs** the main ```ruru-opt.ps1``` script.
 
 <h1>3. Manual Installation (Optional) </a></h1>

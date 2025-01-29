@@ -147,7 +147,7 @@ By [Catnip](https://x.com/catnippin)
 > [!TIP]  
 > Ensure proper cooling as components may generate more heat due to continuous high performance.
 
-## Necessary Tweaks
+## Power Plan Tweaks
 
 - Hibernation mode is turned off, removing the `hiberfil.sys` file. This frees disk space and allows faster shutdowns and restarts.
 - The CPU operates at its highest frequency, preventing delays caused by frequency scaling.

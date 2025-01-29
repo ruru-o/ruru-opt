@@ -115,7 +115,48 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 | Disable Superfetch/Prefetch | Stops Windows from preloading applications into memory. | • Sets `Start=4` for SysMain service<br>• Disables memory preallocation<br>• Stops predictive application loading |
 | Optimize Memory Management | Modifies Windows memory handling for reduced paging and improved responsiveness. | • Disables page combining (`DisablePageCombining=1`)<br>• Sets `LargeSystemCache=0`<br>• Modifies pool quotas and sizes<br>• Disables memory compression<br>• Sets optimal memory management parameters |
 | Optimize Executive Worker Threads | Adjusts system thread management for improved processing. | • Sets `AdditionalCriticalWorkerThreads=6`<br>• Sets `AdditionalDelayedWorkerThreads=6`<br>• Modifies thread scheduling parameters<br>• Optimizes thread priority handling |
-| Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | ------- |
+| Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | • **Disables DPC Watchdog**:  
+   - `DpcWatchdogProfileOffset = dword:00000000`  
+   - Prevents system restart on DPC delays, allowing more time for critical tasks.<br>  
+   • **Optimal Timer Resolution**:  
+   - `GlobalTimerResolutionRequests = dword:00000001`  
+   - Reduces latency in time-sensitive operations.<br>  
+   • **Interrupt Steering**:  
+   - `InterruptSteeringDisabled = dword:00000000`  
+   - Distributes interrupts across multiple cores, improving load balancing.<br>  
+   • **DPC Queue Depth**:  
+   - `DpcQueueDepth = dword:00000001`  
+   - Limits queue depth for timely high-priority task processing.<br>  
+   • **Cache-Aware Scheduling**:  
+   - `CacheAwareScheduling = dword:00000005`  
+   - Reduces cache misses by better utilizing CPU caches.<br>  
+   • **Disables Speculative Execution Mitigations**:  
+   - `MitigationOptions = hex:22,22,22,...`  
+   - Disables mitigations like Spectre and Meltdown, improving performance.<br>  
+   • **Disables TSX**:  
+   - `DisableTsx = dword:00000001`  
+   - Prevents instability caused by TSX, ensuring reliability.<br>  
+   • **DPC Timeout**:  
+   - `DpcWatchdogPeriod = dword:00000000`  
+   - Removes DPC timeout, avoiding system reboots.<br>  
+   • **Interrupt Handling**:  
+   - `InterruptSteeringFlags = dword:00000001`  
+   - Distributes interrupts efficiently across cores.<br>  
+   • **Unlimit DPC Queue**:  
+   - `UnlimitDpcQueue = dword:00000001`  
+   - Allows more deferred tasks to be processed concurrently.<br>  
+   • **Foreground Boost Decay**:  
+   - `ForceForegroundBoostDecay = dword:00000000`  
+   - Maintains high priority for foreground tasks.<br>  
+   • **Distributes Timers**:  
+   - `DistributeTimers = dword:00000001`  
+   - Improves load balancing by distributing timer interrupts.<br>  
+   • **CPU Clock Tick Scheduling**:  
+   - `EnablePerCpuClockTickScheduling = dword:00000000`  
+   - Reduces overhead by avoiding unnecessary clock tick distribution.<br>  
+   • **Disables Auto-Boosting**:  
+   - `DisableAutoBoost = dword:00000001`  
+   - Prevents automatic CPU boost, reducing power consumption.<br> | |
 | Disable Event Trace Sessions | Stops system diagnostic logging and event tracing. | • Disables SleepStudy, Kernel-Processor-Power tracers<br>• Removes Autologger functionality<br>• Stops all diagnostic data collection<br>• Disables performance monitoring traces |
                                                                             
 

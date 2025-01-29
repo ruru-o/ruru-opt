@@ -163,7 +163,7 @@ By [Catnip](https://x.com/catnippin)
 
 Disables multiple system services including:
 - Print Spooler
-- Windows Search
+- Windows Index Search (See [Search Indexing](https://github.com/valleyofdoom/PC-Tuning?tab=readme-ov-file#search-indexing) for more info. 
 - Windows Error Reporting
 - Connected User Experiences
 - Diagnostic Policy Service

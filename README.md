@@ -43,7 +43,7 @@ Once your system is prepared, follow these steps to run the script:
    Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
 
 
-This command will:
+3. This command will:
 - Download the catnip lowest latency power plan to C:\ in the background.
 - Run the main ruru-opt.ps1 script to apply optimizations.
 

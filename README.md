@@ -26,7 +26,7 @@ This PowerShell script implements several system optimizations for Windows, focu
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
-# Run the Script
+### 2.3 Run the Script
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.

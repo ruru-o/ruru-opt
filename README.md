@@ -14,8 +14,6 @@ This PowerShell script implements several system optimizations for Windows, focu
 > [!CAUTION]  
 > Always review scripts before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
 
-> [!WARNING]
-> Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system. 
 
 ## 2.1 Open PowerShell as Administrator:
    - Click the **Start Menu** and search for **PowerShell**.

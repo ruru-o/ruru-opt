@@ -42,7 +42,7 @@ Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt
 
 ## What This Command Does:
 - **Downloads** the catnip lowest latency power plan to `C:\` in the background.
-- **Executes** the main `ruru-opt.ps1` script to apply system optimizations.
+- **Runs** the main ruru-opt.ps1 script to apply optimizations.
 
 <h1>3. Manual Installation (Optional) </a></h1>
 

@@ -26,7 +26,7 @@ This PowerShell script implements several system optimizations for Windows, focu
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
-## 2.3. Run the Script
+### 2.3. Run the Script
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
@@ -47,7 +47,7 @@ This command will:
 - Download the catnip lowest latency power plan to C:\ in the background.
 - Run the main ruru-opt.ps1 script to apply optimizations.
 
-## **2.4. Reset Execution Policy (Optional)**
+### **2.4. Reset Execution Policy (Optional)**
 
 After running the script, you may want to return the PowerShell execution policy to its default setting:
 

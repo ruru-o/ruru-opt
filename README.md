@@ -115,7 +115,65 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 | Disable Superfetch/Prefetch | Stops Windows from preloading applications into memory. | • Sets `Start=4` for SysMain service<br>• Disables memory preallocation<br>• Stops predictive application loading |
 | Optimize Memory Management | Modifies Windows memory handling for reduced paging and improved responsiveness. | • Disables page combining (`DisablePageCombining=1`)<br>• Sets `LargeSystemCache=0`<br>• Modifies pool quotas and sizes<br>• Disables memory compression<br>• Sets optimal memory management parameters |
 | Optimize Executive Worker Threads | Adjusts system thread management for improved processing. | • Sets `AdditionalCriticalWorkerThreads=6`<br>• Sets `AdditionalDelayedWorkerThreads=6`<br>• Modifies thread scheduling parameters<br>• Optimizes thread priority handling |
-| Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | **DPC Watchdog**: Disables DPC watchdog timer (`DpcWatchdogProfileOffset` set to `dword:00000000`). Prevents system restart on DPC delays, allowing more time for tasks. <br> **Timer Resolution**: Improves system timer granularity (`GlobalTimerResolutionRequests` set to `dword:00000001`). Reduces latency in time-sensitive operations.<br> **Interrupt Steering**: Enables interrupt steering (`InterruptSteeringDisabled` set to `dword:00000000`). Distributes hardware interrupts efficiently across CPU cores to improve load balancing.<br> **DPC Queue Parameters**: Reduces DPC queue depth (`DpcQueueDepth` set to `dword:00000001`). Avoids delays in high-priority task processing by limiting the number of queued DPCs.<br> **Cache-Aware Scheduling**: Enhances cache locality (`CacheAwareScheduling` set to `dword:00000005`). Improves multi-core performance by reducing cache misses.<br> **Speculative Execution Mitigations**: Disables speculative execution mitigations (`MitigationOptions` set to `hex:22,22,...`). Improves performance by bypassing mitigations like Spectre and Meltdown for workloads where security is managed elsewhere.<br> **TSX Disable**: Disables TSX (`DisableTsx` set to `dword:00000001`). Prevents instability caused by TSX in CPUs, improving reliability for specific workloads.<br> **DPC Timeout**: Removes DPC timeout (`DpcWatchdogPeriod` set to `dword:00000000`). Prevents unnecessary system reboots during long DPC processes.<br> **Interrupt Handling**: Optimizes interrupt handling (`InterruptSteeringFlags` set to `dword:00000001`). Improves responsiveness by efficiently distributing interrupt requests across cores.<br> **Unlimit DPC Queue**: Removes queue size limit (`UnlimitDpcQueue` set to `dword:00000001`). Allows handling of more deferred tasks concurrently, reducing delays.<br> **Foreground Boost Decay**: Prevents foreground boost decay (`ForceForegroundBoostDecay` set to `dword:00000000`). Maintains priority for foreground tasks to ensure responsiveness.<br> **Timer Distribution**: Distributes timers across cores (`DistributeTimers` set to `dword:00000001`). Balances system load by distributing timer interrupts efficiently.<br> **CPU Clock Tick Scheduling**: Optimizes clock tick scheduling (`EnablePerCpuClockTickScheduling` set to `dword:00000000`). Preserves power efficiency by avoiding unnecessary CPU clock tick distribution.<br> **Auto-Boost Disable**: Disables auto-boosting (`DisableAutoBoost` set to `dword:00000001`). Reduces power consumption and heat output during extended workloads by preventing automatic CPU boost states. |
+| Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | • **Disables DPC Watchdog**:  
+   - Registry Key: `DpcWatchdogProfileOffset`  
+   - Value: `dword:00000000`  
+   - Description: Disables the DPC (Deferred Procedure Call) watchdog timer, preventing automatic system restart on DPC delays, allowing critical processes more time to complete.<br>  
+   • **Sets Optimal Timer Resolution**:  
+   - Registry Key: `GlobalTimerResolutionRequests`  
+   - Value: `dword:00000001`  
+   - Description: Enhances the global timer resolution, reducing latency and improving the accuracy of time-sensitive operations.<br>  
+   • **Modifies Interrupt Steering**:  
+   - Registry Key: `InterruptSteeringDisabled`  
+   - Value: `dword:00000000`  
+   - Description: Enables interrupt steering to optimize how interrupt requests are distributed across multiple CPU cores, improving system responsiveness under load.<br>  
+   • **Adjusts DPC Queue Parameters**:  
+   - Registry Key: `DpcQueueDepth`  
+   - Value: `dword:00000001`  
+   - Description: Limits the depth of the DPC queue, ensuring that high-priority tasks are processed in a timely manner without being delayed by excessive background tasks.<br>  
+   • **Optimizes Cache-Aware Scheduling**:  
+   - Registry Key: `CacheAwareScheduling`  
+   - Value: `dword:00000005`  
+   - Description: Enables cache-aware scheduling, improving multi-core CPU performance by reducing cache misses and better utilizing CPU caches.<br>  
+   • **Disables Speculative Execution Mitigations**:  
+   - Registry Key: `MitigationOptions`  
+   - Value: `hex:22,22,22,...`  
+   - Description: Disables certain speculative execution mitigations (such as those for Spectre and Meltdown), which can decrease performance in certain workloads, especially for CPU-intensive tasks.<br>  
+   - Registry Key: `MitigationOptionsAudit`  
+   - Value: `hex:22,22,22,...`  
+   - Description: Disables speculative execution mitigations in audit mode, ensuring the system doesn't enforce additional security measures that can reduce speed.<br>  
+   • **Disables TSX (Transactional Synchronization Extensions)**:  
+   - Registry Key: `DisableTsx`  
+   - Value: `dword:00000001`  
+   - Description: Disables TSX, which can cause instability in some workloads when enabled, providing more reliable operation for certain tasks.<br>  
+   • **Reduces DPC Timeout**:  
+   - Registry Key: `DpcWatchdogPeriod`  
+   - Value: `dword:00000000`  
+   - Description: Disables the DPC watchdog timeout, allowing deferred procedure calls more time to complete without causing system interruptions or reboots.<br>  
+   • **Improves Interrupt Handling**:  
+   - Registry Key: `InterruptSteeringFlags`  
+   - Value: `dword:00000001`  
+   - Description: Optimizes how interrupt requests are handled by distributing them more evenly across available CPU cores, reducing interrupt latency.<br>  
+   • **Unlimits DPC Queue**:  
+   - Registry Key: `UnlimitDpcQueue`  
+   - Value: `dword:00000001`  
+   - Description: Removes the limit on the DPC queue size, allowing more deferred tasks to be processed concurrently, reducing the chance of task delays.<br>  
+   • **Reduces Foreground Boost Decay**:  
+   - Registry Key: `ForceForegroundBoostDecay`  
+   - Value: `dword:00000000`  
+   - Description: Prevents the reduction of priority for foreground tasks, ensuring that user-interactive applications maintain their responsiveness even during extended periods of use.<br>  
+   • **Distributes Timers Efficiently**:  
+   - Registry Key: `DistributeTimers`  
+   - Value: `dword:00000001`  
+   - Description: Ensures that timer interrupts are distributed efficiently across CPU cores, reducing overload on individual cores and improving system multitasking performance.<br>  
+   • **Optimizes CPU Clock Tick Scheduling**:  
+   - Registry Key: `EnablePerCpuClockTickScheduling`  
+   - Value: `dword:00000000`  
+   - Description: Prevents unnecessary CPU clock tick scheduling across cores, preserving power efficiency and reducing overhead.<br>  
+   • **Disables Auto-Boosting**:  
+   - Registry Key: `DisableAutoBoost`  
+   - Value: `dword:00000001`  
+   - Description: Disables automatic boosting of CPU power states during high-load conditions, reducing unnecessary power consumption and thermal output during sustained workloads.<br> |
 | Disable Event Trace Sessions | Stops system diagnostic logging and event tracing. | • Disables SleepStudy, Kernel-Processor-Power tracers<br>• Removes Autologger functionality<br>• Stops all diagnostic data collection<br>• Disables performance monitoring traces |
                                                                             
 

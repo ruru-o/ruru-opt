@@ -40,7 +40,7 @@ This PowerShell script implements several system optimizations for Windows, focu
 Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
 ```
 
-## What This Command Does:
+## What it does:
 - **Downloads** the catnip lowest latency power plan to `C:\` in the background.
 - **Runs** the main ```ruru-opt.ps1``` script.
 

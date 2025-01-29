@@ -59,7 +59,7 @@ After running the script, you may want to return the PowerShell execution policy
 
 <h1>3. Manual Installation (Optional) </a></h1>
 
-### **Step 1: Download the Required Files**
+### **3.1: Download the Required Files**
 
 To optimize your system, download the following files:
 
@@ -70,7 +70,7 @@ To optimize your system, download the following files:
 2. **Download the Optimization Script:**
    - Ensure the **`ruru-opt.ps1`** script is ready to run.
 
-### **Step 2: Open and Review the Script**
+### **3.2: Open and Review the Script**
 
 Before running the script, you may want to review its contents for safety.
 
@@ -82,7 +82,7 @@ Before running the script, you may want to review its contents for safety.
 > [!CAUTION]  
 > Always review scripts before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
 
-### **Step 4: Run the Script**
+### **3.3: Run the Script**
 
 Once you've reviewed the script, follow these steps to run it:
 
@@ -104,7 +104,7 @@ Once you've reviewed the script, follow these steps to run it:
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
-### **Step 5: Reset Execution Policy (Optional)**
+### **3.4: Reset Execution Policy (Optional)**
 
 After running the script, you may want to return the PowerShell execution policy to its default setting:
 

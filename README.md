@@ -60,7 +60,7 @@ To optimize your system, download the following files:
 ### **3.2. Open and Review the Script**
 
 > [!CAUTION]  
-> Always review scripts before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
+> Always review scripts before running them.
 
 1. Navigate to the folder where you saved the `ruru-opt.ps1` script and the `.pow` file.
 

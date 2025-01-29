@@ -51,10 +51,9 @@ Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt
 
 To optimize your system, download the following files:
 
-2. **Download `ruru-opt.ps1`**
-  
+2. **Download [ruru-opt.ps1](https://github.com/ruru-o/ruru-opt/releases/download/0.0.1/ruru-opt.ps1)**
 1. **Download the Power Plan:**
-   - Download the **Catnip Lowest Latency Power Plan** (`.pow` file).
+   - Download the [Catnip Lowest Latency Power Plan](https://github.com/ruru-o/ruru-opt/releases/download/0.0.1/shakabo.pow).
    - Save the `.pow` file in the same directory where the **`ruru-opt.ps1`** script is stored.
 
 ### **3.2. Open and Review the Script**

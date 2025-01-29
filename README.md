@@ -14,27 +14,27 @@ This PowerShell script implements several system optimizations for Windows, focu
 > [!WARNING]
 > Before running the PowerShell script, make sure you allow PowerShell scripts to run on your system. 
 
-### 2.1 Open PowerShell as Administrator:
+## 2.1 Open PowerShell as Administrator:
    - Click the **Start Menu** and search for **PowerShell**.
    - Right-click **Windows PowerShell** and select **Run as Administrator**.
    - Confirm with **Yes** if prompted.
 
-### 2.2. Set Execution Policy to Unrestricted:
+## 2.2. Set Execution Policy to Unrestricted:
    - In the PowerShell window, run the following command:
      ```powershell
      Set-ExecutionPolicy Unrestricted
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
-### 2.3 Run the Script
+## 2.3 Run the Script
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
-## 1. **Open PowerShell as Administrator**
+### 1. **Open PowerShell as Administrator**
    - If you haven't done so already, right-click the PowerShell application and select **Run as Administrator**.
 
-## 2. **Copy and Paste the Command Below**
+### 2. **Copy and Paste the Command Below**
 
 ```powershell
 Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex

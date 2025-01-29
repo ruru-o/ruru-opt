@@ -117,6 +117,17 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 | Optimize Executive Worker Threads | Adjusts system thread management for improved processing. | • Sets `AdditionalCriticalWorkerThreads=6`<br>• Sets `AdditionalDelayedWorkerThreads=6`<br>• Modifies thread scheduling parameters<br>• Optimizes thread priority handling |
 | Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | • Sets DPC watchdog to disable: `0`<br>• Sets optimal timer resolution: `1`<br>• Sets interrupt steering: `1`, `0`<br>• Sets DPC queue depth: `1`<br>• Sets unlimited DPC queue: `1`<br>• Sets cache-aware scheduling: `5`<br>• Sets speculative execution mitigations to disable: `22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22`, `22,22,22,22,22,22,22,22`, `1`<br>• Sets exception chain validation to disable: `1`<br>• Sets timer expiration serialization: `2`<br>• Sets auto-boost to disable: `1`<br>• Sets timer distribution: `1`<br>• Sets thread DPC processing to disable: `0`<br>• Sets foreground boost decay to disable: `0`<br>• Sets per-CPU clock tick scheduling to disable: `0`<br>• Sets DPC timeout: `0`<br>• Sets DPC threshold: `0`<br>• Sets kernel exception handling options: `0`<br>• Sets timer check flags: `0`<br>• Sets maximum shared ready queue size: `1`<br>• Sets minimum DPC rate: `0`<br>• Sets DPC watchdog period: `0` |
 | Disable Event Trace Sessions | Stops system diagnostic logging and event tracing. | • Disables SleepStudy, Kernel-Processor-Power tracers<br>• Removes Autologger functionality<br>• Stops all diagnostic data collection<br>• Disables performance monitoring traces |
+
+## Kernel Operations
+
+- **DPC Watchdog Disabled**: Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
+- **Optimal Timer Resolution**: Adjusts timer resolution to `1`, ensuring system timers are more accurate and reducing potential latency in time-sensitive operations.
+- **Interrupt Steering Adjusted**: Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention and improving overall system performance.
+- **DPC Queue and Scheduling Adjustments**: Modifies the DPC queue depth and removes restrictions on queue length, improving handling of deferred procedure calls without unnecessary throttling. Enables cache-aware scheduling to reduce CPU cache misses during thread execution.
+- **Speculative Execution Mitigations Disabled**: Disables certain speculative execution mitigations to enhance performance, acknowledging potential trade-offs in security.
+- **Exception Chain Validation Disabled**: Disables the validation of exception chains, allowing faster execution at the cost of less security for exception handling.
+- **Timer Expiration and Boost Adjustments**: Adjusts timer expiration handling for efficient scheduling and disables automatic boost mechanisms to avoid system performance penalties.
+- **Disabling Unnecessary Features**: Disables thread DPC processing, foreground boost decay, and per-CPU clock tick scheduling, reducing overhead and improving direct system performance.
                                                                             
 
 ## Catnip Lowest Latency Power Plan

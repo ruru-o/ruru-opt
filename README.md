@@ -26,35 +26,23 @@ This PowerShell script implements several system optimizations for Windows, focu
      ```
    - Press **Enter** and type `Y` when prompted to confirm.
 
-### 2.3. Run the Script
+# Run the Script
 
 > [!WARNING]  
 > The script requires **administrator privileges** to modify system settings, including power plans and registry tweaks. Do not run the script if you are not comfortable with these changes.
 
-Once your system is prepared, follow these steps to run the script:
+## 1. **Open PowerShell as Administrator**
+   - If you haven't done so already, right-click the PowerShell application and select **Run as Administrator**.
 
-1. **Open PowerShell as Administrator** (if not already opened).
+## 2. **Copy and Paste the Command Below**
 
-2. **Copy and Paste the Commands Below**:
+```powershell
+Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
+```
 
-   Use the code below to automatically download and import the custom power plan and run the main `ruru-opt.ps1` script.
-
-   ```powershell
-   Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/shakabo.pow" -OutFile "C:\shakabo.pow" } | Out-Null; irm https://raw.githubusercontent.com/ruru-o/ruru-opt/main/ruru-opt/ruru-opt.ps1 | iex
-
-
-3. This command will:
-- Download the catnip lowest latency power plan to C:\ in the background.
-- Run the main ruru-opt.ps1 script to apply optimizations.
-
-### **2.4. Reset Execution Policy (Optional)**
-
-After running the script, you may want to return the PowerShell execution policy to its default setting:
-
-1. Open **PowerShell as Administrator**.
-2. Run the following command:
-   ```powershell
-   Set-ExecutionPolicy Restricted
+## What This Command Does:
+- **Downloads** the catnip lowest latency power plan to `C:\` in the background.
+- **Executes** the main `ruru-opt.ps1` script to apply system optimizations.
 
 <h1>3. Manual Installation (Optional) </a></h1>
 

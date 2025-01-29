@@ -97,7 +97,7 @@ After running the script, you may want to return the PowerShell execution policy
 
 This documentation explains the system tweaks applied by the PowerShell optimization script, including registry changes, power plan configurations, and other adjustments intended to reduce latency and improve system responsiveness.
 
-| Tweak Name | Description | System Changes |
+| Change | Description | System Changes |
 |------------|-------------|----------------|
 | Disable Windows Update | Prevents Windows Update from automatically downloading and installing updates. | • Sets `DoNotConnectToWindowsUpdateInternetLocations=1` in `HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate`<br>• Sets `TrayIconVisibility=0` in `HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings`<br>• Sets `AUOptions=1` in `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update`<br>• Sets `SearchOrderConfig=0` in `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverSearching`<br>• Sets `AutoDownload=2` in `HKLM:\SOFTWARE\Policies\Microsoft\WindowsStore` |
 | Disable Windows Defender | Deactivates Windows Defender's real-time protection, antimalware, network inspection, and security features. | • Sets `SpyNetReporting=0` and `SubmitSamplesConsent=0` in Spynet<br>• Disables services: Sense, WinDefend, MsSecCore, WdBoot, WdFilter<br>• Sets `DisableScanOnRealtimeEnable=1` and `DisableBehaviorMonitoring=1` in Real-Time Protection<br>• Disables SmartScreen (`SmartScreenEnabled=Off`)<br>• Sets `DisableAntiSpyware=1` in Windows Defender policies<br>• Disables HVCI (`Enabled=0` in DeviceGuard) |

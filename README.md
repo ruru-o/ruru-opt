@@ -118,7 +118,7 @@ This documentation explains the system tweaks applied by the PowerShell optimiza
 | Optimize Kernel Performance | Fine-tunes kernel operations for system responsiveness. | • Sets DPC watchdog to disable: `0`<br>• Sets optimal timer resolution: `1`<br>• Sets interrupt steering: `1`, `0`<br>• Sets DPC queue depth: `1`<br>• Sets unlimited DPC queue: `1`<br>• Sets cache-aware scheduling: `5`<br>• Sets speculative execution mitigations to disable: `22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22`, `22,22,22,22,22,22,22,22`, `1`<br>• Sets exception chain validation to disable: `1`<br>• Sets timer expiration serialization: `2`<br>• Sets auto-boost to disable: `1`<br>• Sets timer distribution: `1`<br>• Sets thread DPC processing to disable: `0`<br>• Sets foreground boost decay to disable: `0`<br>• Sets per-CPU clock tick scheduling to disable: `0`<br>• Sets DPC timeout: `0`<br>• Sets DPC threshold: `0`<br>• Sets kernel exception handling options: `0`<br>• Sets timer check flags: `0`<br>• Sets maximum shared ready queue size: `1`<br>• Sets minimum DPC rate: `0`<br>• Sets DPC watchdog period: `0` |
 | Disable Event Trace Sessions | Stops system diagnostic logging and event tracing. | • Disables SleepStudy, Kernel-Processor-Power tracers<br>• Removes Autologger functionality<br>• Stops all diagnostic data collection<br>• Disables performance monitoring traces |
 
-## Kernel Operations
+## Kernel Adjustments
 
 - ``DPC Watchdog Disabled``: Disables DPC watchdog to prevent unnecessary monitoring of deferred procedure calls, which can reduce processing delays.
 - ``Interrupt Steering Adjusted``: Configures interrupt steering to optimize CPU affinity for interrupts, potentially reducing CPU contention.

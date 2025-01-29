@@ -163,7 +163,7 @@ By [Catnip](https://x.com/catnippin)
 
 Disables multiple system services including:
 - Print Spooler
-- Windows Index Search (See [Search Indexing](https://github.com/valleyofdoom/PC-Tuning?tab=readme-ov-file#search-indexing) by valleyofdoom for more info)
+- Windows Index Search (See [Search Indexing](https://github.com/valleyofdoom/PC-Tuning?tab=readme-ov-file#search-indexing) by [valleyofdoom](https://github.com/valleyofdoom) for more info)
 - Windows Error Reporting
 - Connected User Experiences
 - Diagnostic Policy Service
@@ -180,7 +180,7 @@ Disables multiple system services including:
 
 - Removes OneDrive integration
 - Disables Windows Explorer features (Quick Access, Home, Gallery)
-- Modifies system timer resolution (see [Clock Interrupt Frequency (Timer Resolution)](https://github.com/valleyofdoom/PC-Tuning?tab=readme-ov-file#clock-interrupt-frequency-timer-resolution) by valleyofdoom)
+- Modifies system timer resolution (see [Clock Interrupt Frequency (Timer Resolution)](https://github.com/valleyofdoom/PC-Tuning?tab=readme-ov-file#clock-interrupt-frequency-timer-resolution) by [valleyofdoom](https://github.com/valleyofdoom))
 - Adjusts processor scheduling policies
 - Optimizes network settings
 - Disables various system monitoring features

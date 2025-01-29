@@ -152,7 +152,7 @@ By [Catnip](https://x.com/catnippin)
 - Hibernation mode is turned off, removing the `hiberfil.sys` file. This frees disk space and allows faster shutdowns and restarts.
 - The CPU operates at its highest frequency, preventing delays caused by frequency scaling.
 - All energy-saving features are disabled, keeping components active and ready.
-- Disable CPU idle states (you can enable them if cooling is insufficient, as disabling keeps CPU at 100% usage, causing higher temps). See [Calypto's Latency Guide](https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0) for more info.
+- Disable CPU idle states (the script provides an option to enable them if cooling is insufficient, as disabling idle keeps CPU at 100% usage, causing higher temps). See [Calypto's Latency Guide](https://docs.google.com/document/d/1c2-lUJq74wuYK1WrA_bIvgb89dUN0sj8-hO3vqmrau4/edit?tab=t.0) for more info.
 - Forces P0 (maximum performance) state
 - Disables power saving features
 - Implements custom high-performance power scheme

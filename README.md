@@ -12,7 +12,7 @@ This PowerShell script implements several system optimizations for Windows, focu
 <h1>2. Usage </a></h1>
 
 > [!CAUTION]  
-> Always review scripts before running them. If you're unsure about the script's behavior, feel free to reach out for clarification.
+> Always review scripts before running them.
 
 
 ## 2.1 Open PowerShell as Administrator:

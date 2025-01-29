@@ -12,7 +12,7 @@ This PowerShell script implements several system optimizations for Windows, focu
 <h1>2. Usage </a></h1>
 
 > [!CAUTION]  
-> Always review scripts before running them.
+> Always review the script if you're unsure of what it does.
 
 
 ## 2.1 Open PowerShell as Administrator:
@@ -48,7 +48,7 @@ Start-Job { Invoke-RestMethod "https://raw.githubusercontent.com/ruru-o/ruru-opt
 <h1>3. Manual Installation (Optional) </a></h1>
 
 > [!CAUTION]  
-> Always review scripts before running them.
+> Always review the script if you're unsure of what it does.
 
 ### **3.1. Download the Required Files**
 

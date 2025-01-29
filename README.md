@@ -162,7 +162,6 @@ By [Catnip](https://x.com/catnippin)
 ## Service Modifications
 
 Disables multiple system services including:
-- Windows Audio
 - Print Spooler
 - Windows Search
 - Windows Error Reporting
